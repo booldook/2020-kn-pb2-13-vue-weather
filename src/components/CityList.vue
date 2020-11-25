@@ -1,12 +1,35 @@
 <template lang='pug'>
 	.city-wrapper
-		select.form-control
+		select.form-control(v-model='selectCity' v-on:change='onCityChg')
 			option(value='' selected) 날씨정보를 보고싶은 도시를 선택하세요.
+			option(v-for='v in GET_CITY' v-bind:key='v.id' v-bind:value='v.id') {{ v.name }}
 </template>
 
 <script>
-export default {
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 
+export default {
+	name: 'cityList',
+	data() {
+		return {
+			selectCity: '',
+		}
+	},
+	created() {
+		this.$store.dispatch('ACT_CITY');
+	},
+	methods: {
+		onCityChg(e) {
+			this.$store.dispatch('ACT_DAILY', this.selectCity);
+			this.$store.dispatch('ACT_WEEKLY', this.selectCity);
+		}
+	},
+	computed: {
+		...mapGetters(['GET_CITY', 'GET_POSITION', 'GET_DAILY', 'GET_WEEKLY'])
+	},
+	watch: {
+
+	}
 }
 </script>
 
