@@ -18,7 +18,8 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$lightColor: #f1f1f1;
+@import "@/assets/css/variables.scss";
+
 a {
 	&:link {color: $lightColor}
 	&:visited {color: $lightColor}

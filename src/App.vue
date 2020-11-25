@@ -19,14 +19,8 @@ export default {
 </script>
 
 <style lang='scss'>
-	$lighterColor: #f1f1f1;
-	$lightColor: #ddd;
-
-	html, body, div, p, ul, li, h1, h2, h3, h4, h5 {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-	}  
+	@import "@/assets/css/normalize.scss";
+	@import "@/assets/css/variables.scss";
 
 	#app {
 		height: 100vh; 
@@ -34,4 +28,5 @@ export default {
 		border-right: 1px solid $lightColor;
 		padding: 0 !important;
 	}
+	.wrapper {flex-grow: 1;}
 </style>
