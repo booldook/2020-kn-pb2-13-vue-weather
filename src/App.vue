@@ -1,6 +1,7 @@
 <template lang='pug'>
 	#app.container.d-flex.flex-column.justify-content-between
 		nav-bar
+		router-view.wrapper
 		footer-bar
 </template>
 
@@ -25,7 +26,8 @@ export default {
 		margin: 0;
 		padding: 0;
 		list-style: none;
-	}
+	}  
+
 	#app {
 		height: 100vh; 
 		border-left: 1px solid $lightColor; 
