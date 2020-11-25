@@ -14,4 +14,14 @@ const axCity = async () => {
 	}
 }
 
-export { axCity }
+const getLocation = () => {
+	return new Promise((resolve, reject) => {
+		navigator.geolocation.getCurrentPosition((r) => {
+			resolve({ error: null, lat: r.coords.latitude, lon: r.coords.longitude });
+		}, (e) => {
+			reject({ error: e, lat: null, lon: null })
+		});
+	})
+}
+
+export { axCity, getLocation }
