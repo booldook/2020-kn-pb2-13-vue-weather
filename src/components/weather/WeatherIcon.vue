@@ -1,12 +1,12 @@
 <template lang='pug'>
 	div.weather-icon.border.p-3
-		img.w-100(:src='src')
+		img.w-100(:src='icon')
 </template>
 
 <script>
 export default {
 	name: 'weather-icon',
-	props: ['src']
+	props: ['icon']
 }
 </script>
 

@@ -18,7 +18,6 @@ export default {
 	created() {
 		this.$store.dispatch('ACT_CITY');
 		this.$store.dispatch('ACT_POSITION');
-		//console.log(mapGetters(['GET_CITY', 'GET_POSITION', 'GET_DAILY', 'GET_WEEKLY']));
 	},
 	methods: {
 		onCityChg(e) {

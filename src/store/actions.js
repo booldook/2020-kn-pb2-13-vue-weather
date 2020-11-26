@@ -1,4 +1,4 @@
-import { axCity, getLocation } from '../api';
+import { axCity, getLocation, axDaily } from '../api';
 
 
 export default {
