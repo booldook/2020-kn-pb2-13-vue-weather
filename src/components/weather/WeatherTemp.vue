@@ -1,7 +1,12 @@
 <template lang='pug'>
 	div.weather-temp.p-3.text-center
-		div.p-2 {{temp}} ℃
-		span.ml-3 ({{tempMin}}℃ / {{tempMax}}℃)
+		div.p-2.temp {{temp}} ℃
+		div.temp-detail 
+			| 최고기온: 
+			strong {{tempMin}}
+			| ℃ / 최저기온: 
+			strong {{tempMax}}
+			| ℃
 </template>
 
 <script>
@@ -12,5 +17,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-	.weather-temp {border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+	.temp {font-size: 2em;}
+	.temp-detail {font-size: 1.25em;}
 </style>

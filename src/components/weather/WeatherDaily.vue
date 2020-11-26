@@ -1,6 +1,6 @@
 <template lang='pug'>
-	div.weather-daily.text-center.d-flex.flex-column
-		weather-icon(:icon='GET_DAILY.icon ? GET_DAILY.icon : ""')
+	div.weather-daily.text-center.d-flex.flex-column.justify-content-center
+		weather-icon.weather-icon(:icon='GET_DAILY.icon ? GET_DAILY.icon : ""')
 		weather-temp(:temp='GET_DAILY.main ? GET_DAILY.main.temp : ""' :tempMin='GET_DAILY.main ? GET_DAILY.main.temp_min : ""' :tempMax='GET_DAILY.main ? GET_DAILY.main.temp_max : ""')
 </template>
 
@@ -22,5 +22,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-	.weather-temp {border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;}
+	.weather-daily {width: 60%; margin: 3em auto 0 auto;}
+	.weather-icon {max-width: 300px; margin: auto;}
 </style>
