@@ -1,5 +1,5 @@
 <template lang='pug'>
-	div.weather-icon.border.p-3
+	div.weather-icon.mt-2
 		img.w-100(:src='icon')
 </template>
 
@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-	.weather-icon {border-color: darkseagreen;}
+	
 </style>

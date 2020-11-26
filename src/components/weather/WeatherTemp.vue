@@ -5,6 +5,7 @@
 			strong {{temp}}
 			| ℃ / 체감온도: 
 			strong {{feel}}
+			| ℃
 		div.temp-detail 
 			| 최고기온: 
 			strong {{min}}
@@ -21,6 +22,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-	.temp {font-size: 2em;}
+	.temp {font-size: 1.5em;}
 	.temp-detail {font-size: 1.25em;}
 </style>

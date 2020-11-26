@@ -22,6 +22,7 @@ const axDaily = async (val) => {
 		}
 		const r = await axios.get(DAILY_URL, { params: SEND_DATA });
 		r.data.icon = iconGen(r.data.weather[0].icon);
+		r.data.time = moment(r.data.dt * 1000).format('YYYY년 MM월 DD일 HH시 mm분 기준')
 		console.log(r.data);
 		return r.data;
 	}

@@ -1,12 +1,12 @@
 <template lang='pug'>
-	div.weather-desc.p-3.text-center
-		div.desc {{ main }} / {{ description }} 
+	div.weather-desc.pb-2.text-center
+		div.desc {{ main }} / {{ desc }} 
 </template>
 
 <script>
 export default {
 	name: 'weather-desc',
-	props: ['main', 'description']
+	props: ['main', 'desc']
 }
 </script>
 
