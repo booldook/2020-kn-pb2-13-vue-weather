@@ -1,18 +1,22 @@
 <template lang='pug'>
 	div.weather-temp.p-3.text-center
-		div.p-2.temp {{temp}} ℃
+		div.p-2.temp 
+			| 현재기온: 
+			strong {{temp}}
+			| ℃ / 체감온도: 
+			strong {{feel}}
 		div.temp-detail 
 			| 최고기온: 
-			strong {{tempMin}}
+			strong {{min}}
 			| ℃ / 최저기온: 
-			strong {{tempMax}}
+			strong {{max}}
 			| ℃
 </template>
 
 <script>
 export default {
 	name: 'weather-temp',
-	props: ['temp', 'tempMin', 'tempMax']
+	props: ['temp', 'min', 'max', 'feel']
 }
 </script>
 
