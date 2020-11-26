@@ -1,8 +1,7 @@
 <template lang='pug'>
-	.city-wrapper
-		select.form-control(v-model='selectCity' @:change='onCityChg')
-			option(value='' selected) 날씨정보를 보고싶은 도시를 선택하세요.
-			option(v-for='v in GET_CITY' :key='v.id' :value='v.id') {{ v.name }}
+	.city-wrapper.text-center
+		b-dropdown#dropdown-1(text="날씨를 확인할 도시를 선택하세요"  variant="primary" right @:click='onCityChg' v-model='selectCity')
+			b-dropdown-item(v-for='v in GET_CITY' :key='v.id' :value='v.id') {{ v.name }}
 </template>
 
 <script>
@@ -21,6 +20,7 @@ export default {
 	},
 	methods: {
 		onCityChg(e) {
+			console.log(this);
 			this.$store.dispatch('ACT_DAILY', this.selectCity);
 			this.$store.dispatch('ACT_WEEKLY', this.selectCity);
 		}
