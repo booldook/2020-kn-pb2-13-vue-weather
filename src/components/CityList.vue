@@ -1,7 +1,11 @@
 <template lang='pug'>
-	.city-wrapper.text-center
-		b-dropdown#dropdown-1(text="날씨를 확인할 도시를 선택하세요"  variant="primary" right @:click='onCityChg' v-model='selectCity')
-			b-dropdown-item(v-for='v in GET_CITY' :key='v.id' :value='v.id') {{ v.name }}
+	.city-wrapper
+		//- b-dropdown#dropdown-1(text="날씨를 확인할 도시를 선택하세요"  variant="primary" right v-model='selectCity')
+		//- 	b-dropdown-item-button(v-for='v in GET_CITY' :key='v.id' :value='v.id' v-on:click='onCityChg') {{ v.name }}
+		div.form-inline.text-center
+			select.form-control.mx-auto(v-model='selectCity' @change='onCityChg')
+				option(value='' selected) 날씨를 확인할 도시를 선택하세요
+				option(v-for='v in GET_CITY' :key='v.id' :value='v.id') {{v.name}}
 </template>
 
 <script>
@@ -20,7 +24,7 @@ export default {
 	},
 	methods: {
 		onCityChg(e) {
-			console.log(this);
+			console.log(this.selectCity);
 			this.$store.dispatch('ACT_DAILY', this.selectCity);
 			this.$store.dispatch('ACT_WEEKLY', this.selectCity);
 		}
