@@ -1,10 +1,15 @@
 <template lang="pug">
-	h1 DAIRY
+	weather-daily.d-flex.align-items-center.justify-content-center
 </template>
 
 <script>
-export default {
+import WeatherDaily from '../components/weather/WeatherDaily.vue'
 
+export default {
+	name: 'daily',
+	components: {
+		'weather-daily': WeatherDaily,
+	}
 }
 </script>
 

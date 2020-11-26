@@ -33,8 +33,11 @@ export default {
 		...mapGetters(['GET_CITY', 'GET_POSITION', 'GET_DAILY', 'GET_WEEKLY'])
 	},
 	watch: {
-		GET_POSITION: function(val) {
+		GET_POSITION(val) {
 			this.$store.dispatch('ACT_DAILY', {lat: val.lat, lon: val.lon});
+		},
+		GET_WEEKLY(val) {
+			this.$router.push('/daily');
 		}
 	}
 }

@@ -36,8 +36,11 @@ const axWeekly = async (val) => {
 	try {
 		SEND_DATA.id = val
 		const r = await axios.get(WEEKLY_URL, { params: SEND_DATA });
-		//r.data.icon = iconGen(r.data.weather[0].icon);
-		//r.data.time = moment(r.data.dt * 1000).format('YYYY년 MM월 DD일 HH시 mm분 기준')
+		r.data.title = r.data.city.name + ', ' + r.data.city.country;
+		for(let v of r.data.list) {
+			v.icon = iconGen(v.weather[0].icon);
+			v.time = moment(v.dt * 1000).format('YYYY년 MM월 DD일 HH시 기준')
+		}
 		console.log(r.data);
 		return r.data;
 	}
