@@ -18,6 +18,7 @@ export default {
 	created() {
 		this.$store.dispatch('ACT_CITY');
 		this.$store.dispatch('ACT_POSITION');
+		//console.log(mapGetters(['GET_CITY', 'GET_POSITION', 'GET_DAILY', 'GET_WEEKLY']));
 	},
 	methods: {
 		onCityChg(e) {
@@ -29,8 +30,8 @@ export default {
 		...mapGetters(['GET_CITY', 'GET_POSITION', 'GET_DAILY', 'GET_WEEKLY'])
 	},
 	watch: {
-		GET_POSITION(newValue, oldValue) {
-			alert(`lat: ${newValue.lat}, lon: ${newValue.lon}`);
+		GET_POSITION: function(val) {
+			this.$store.dispatch('ACT_DAILY', {lat: val.lat, lon: val.lon});
 		}
 	}
 }
