@@ -11,8 +11,9 @@ export default {
 	async ACT_DAILY({ commit }, val) {
 		if(typeof val === 'object')
 			commit('MUT_DAILY', await axDaily({ lat: val.lat, lon: val.lon }));
-		else if(typeof val === 'string')
+		else if(typeof val === 'string'){
 			commit('MUT_DAILY', await axDaily(val));
+		}
 	},
 	async ACT_WEEKLY({ commit }, val) {
 		commit('MUT_WEEKLY', await axWeekly(val));

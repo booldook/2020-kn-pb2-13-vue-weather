@@ -1,5 +1,5 @@
 <template lang='pug'>
-	div.weather-desc.pb-2.text-center
+	div.weather-desc.text-center
 		div.desc {{ main }} / {{ desc }} 
 </template>
 

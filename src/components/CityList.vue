@@ -20,26 +20,15 @@ export default {
 	},
 	created() {
 		this.$store.dispatch('ACT_CITY');
-		this.$store.dispatch('ACT_POSITION');
 	},
 	methods: {
 		onCityChg(e) {
-			console.log(this.selectCity);
-			this.$store.dispatch('ACT_DAILY', this.selectCity);
-			this.$store.dispatch('ACT_WEEKLY', this.selectCity);
+			this.$router.push('/daily/'+this.selectCity);
 		}
 	},
 	computed: {
-		...mapGetters(['GET_CITY', 'GET_POSITION', 'GET_DAILY', 'GET_WEEKLY'])
+		...mapGetters(['GET_CITY'])
 	},
-	watch: {
-		GET_POSITION(val) {
-			this.$store.dispatch('ACT_DAILY', {lat: val.lat, lon: val.lon});
-		},
-		GET_WEEKLY(val) {
-			this.$router.push('/daily');
-		}
-	}
 }
 </script>
 

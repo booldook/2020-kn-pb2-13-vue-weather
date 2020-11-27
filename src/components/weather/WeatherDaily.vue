@@ -18,6 +18,7 @@ import WeatherWind from './WeatherWind.vue';
 
 export default {
 	name: 'weather-daily',
+	props: ['res'],
 	data() {
 		return { icon: '', temp: '', max: '', min: '', feel: '', main: '', desc: '', deg : '', speed: '', city: '', country: '', time: '' }
 	},
@@ -27,11 +28,8 @@ export default {
 		'weather-desc': WeatherDesc,
 		'weather-wind': WeatherWind,
 	},
-	computed: {
-		...mapGetters(['GET_DAILY'])
-	},
 	watch: {
-		GET_DAILY: function (val) {
+		res: function (val) {
 			this.icon = val.icon || ''
 			this.temp = val.main ? val.main.temp : ''
 			this.max = val.main ? val.main.temp_max : ''

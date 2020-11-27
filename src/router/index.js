@@ -13,7 +13,7 @@ const routes = [
 		component: Home,
 	},
 	{
-		path: '/daily',
+		path: '/daily/:id',
 		name: 'daily',
 		component: Daily,
 	},
