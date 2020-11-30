@@ -13,7 +13,7 @@ export default {
 	name: 'WeatherWeekly',
 	props: ['res'],
 	data() {
-		return { city: '', country: '', time: null }
+		return { city: '', country: '', time: null, list: null }
 	},
 	components: {
 		'weather-title': WeatherTitle,
@@ -32,7 +32,9 @@ export default {
 
 <style lang="scss" scoped>
 	.list-wrap {
-		overflow-x: auto;
+		width: 100%;
+		height: calc(100vh - 153px);
+		overflow-y: auto;
 		.list {border-bottom: 1px solid #ccc; padding: 0.5em;}
 	}
 </style>
