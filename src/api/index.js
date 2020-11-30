@@ -37,7 +37,7 @@ const axWeekly = async (val) => {
 		r.data.title = r.data.city.name + ', ' + r.data.city.country;
 		for(let v of r.data.list) {
 			v.icon = iconGen(v.weather[0].icon);
-			v.time = timeGen(r.data.dt * 1000, 'H') + ' 기준'
+			v.time = timeGen(v.dt * 1000, 'H') + ' 기준'
 		}
 		return r.data;
 	}

@@ -46,4 +46,8 @@ const router = new VueRouter({
 	routes
 })
 
+router.beforeEach((to, from , next) => {
+	to.name != 'home' && !from.name ? next({ path: '/' }) : next()
+})
+
 export default router
