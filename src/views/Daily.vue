@@ -1,5 +1,5 @@
 <template lang="pug">
-	weather-daily.d-flex.align-items-center.justify-content-center(:res='info')
+	weather-daily(:res='GET_DAILY')
 </template>
 
 <script>
@@ -10,8 +10,7 @@ export default {
 	name: 'daily',
 	data() {
 		return {
-			selectCity: '',
-			info: null
+			selectCity: ''
 		}
 	},
 	created() {
@@ -24,13 +23,6 @@ export default {
 	computed: {
 		...mapGetters(['GET_DAILY'])
 	},
-	watch: {
-		GET_DAILY: function(val) {
-			console.log("===========");
-			console.log(val);
-			this.info = val;
-		}
-	}
 }
 </script>
 

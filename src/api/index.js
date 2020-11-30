@@ -15,10 +15,15 @@ const iconGen = (icon) => {
 
 const axDaily = async (val) => {
 	try {
-		if(typeof val === 'string') SEND_DATA.id = val
+		if(typeof val === 'string') {
+			SEND_DATA.id = val
+			SEND_DATA.lat = null
+			SEND_DATA.lon = null
+		}
 		else {
 			SEND_DATA.lat = val.lat
 			SEND_DATA.lon = val.lon
+			SEND_DATA.id = null
 		}
 		const r = await axios.get(DAILY_URL, { params: SEND_DATA });
 		r.data.icon = iconGen(r.data.weather[0].icon);

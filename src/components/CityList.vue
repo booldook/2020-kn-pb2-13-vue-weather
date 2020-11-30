@@ -23,7 +23,7 @@ export default {
 	},
 	methods: {
 		onCityChg(e) {
-			this.$router.push('/daily/'+this.selectCity);
+			this.$router.push('/daily/'+this.selectCity); // location.href='/index.html'
 		}
 	},
 	computed: {

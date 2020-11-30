@@ -6,7 +6,7 @@
 				p.text-secondary
 					small vue.js로 제작된 날씨정보 앱.
 						span.text-info.ml-3 by booldook
-		city-list
+		city-list.mb-5
 		weather-daily(:res='GET_DAILY')
 </template>
 

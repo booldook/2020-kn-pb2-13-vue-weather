@@ -18,7 +18,7 @@ const routes = [
 		component: Daily,
 	},
 	{
-		path: '/weekly',
+		path: '/weekly/:id',
 		name: 'weekly',
 		component: Weekly,
 	}
