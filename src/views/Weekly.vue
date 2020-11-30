@@ -1,5 +1,5 @@
 <template lang="pug">
-	weather-weekly
+	weather-weekly(:res='GET_WEEKLY')
 </template>
 
 <script>
@@ -21,11 +21,6 @@ export default {
 	computed: {
 		...mapGetters(['GET_WEEKLY'])
 	},
-	watch: {
-		GET_WEEKLY: function(v) {
-			console.log(v);
-		}
-	}
 }
 </script>
 

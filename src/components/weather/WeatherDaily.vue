@@ -1,8 +1,6 @@
 <template lang='pug'>
 	div.d-flex.flex-column.align-items-center.justify-content-center.text-center
-		div.city-wrap
-			h3.city {{ city }} , {{ country }}
-			h5.time {{ time }}
+		weather-title(:city='city' :country='country' :time='time')
 		weather-icon.weather-icon(:icon='icon')
 		weather-temp(:temp='temp' :min='min' :max='max' :feel='feel')
 		weather-desc.text-primary(:main='main' :desc='desc')
@@ -11,6 +9,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import WeatherTitle from './WeatherTitle.vue';
 import WeatherIcon from './WeatherIcon.vue';
 import WeatherTemp from './WeatherTemp.vue';
 import WeatherDesc from './WeatherDesc.vue';
@@ -23,6 +22,7 @@ export default {
 		return { icon: '', temp: '', max: '', min: '', feel: '', main: '', desc: '', deg : '', speed: '', city: '', country: '', time: '' }
 	},
 	components: {
+		'weather-title': WeatherTitle,
 		'weather-icon': WeatherIcon,
 		'weather-temp': WeatherTemp,
 		'weather-desc': WeatherDesc,
