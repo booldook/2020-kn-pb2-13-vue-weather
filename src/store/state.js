@@ -1,5 +1,5 @@
 export default {
-	selectCity: '',
+	selectCity: null,
 	cityList: [],
 	position: {},
 	daily: {},

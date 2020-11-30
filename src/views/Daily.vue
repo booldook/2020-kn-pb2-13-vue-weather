@@ -12,18 +12,15 @@ export default {
 		'weather-daily': WeatherDaily,
 	},
 	created() {
-		if(this.$route.params && this.$route.params.id) {
+		console.log(this.$store.state.selectCity);
+		if(this.$route.params && this.$route.params.id)
 			this.$store.dispatch('ACT_DAILY', this.$route.params.id);
-		}
+		else if(this.$store.state.selectCity)
+			this.$store.dispatch('ACT_DAILY', this.$store.state.selectCity);
 	},
 	computed: {
-		...mapGetters(['GET_DAILY', 'GET_SEL_CITY'])
+		...mapGetters(['GET_DAILY'])
 	},
-	watch: {
-		GET_SEL_CITY: function(v) {
-			this.$store.dispatch('ACT_DAILY', v);
-		}
-	}
 }
 </script>
 
