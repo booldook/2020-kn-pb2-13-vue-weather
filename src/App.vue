@@ -1,7 +1,8 @@
 <template lang='pug'>
 	#app.container.d-flex.flex-column.justify-content-between
 		nav-bar
-		router-view.wrapper
+		transition(name='fade')
+			router-view.wrapper
 		footer-bar
 </template>
 
@@ -27,6 +28,14 @@ export default {
 		border-left: 1px solid $lightColor; 
 		border-right: 1px solid $lightColor;
 		padding: 0 !important;
+		/*
+		.fade-enter-active, .fade-leave-active {
+			transition: opacity .5s;
+		}
+		.fade-enter, .fade-leave-to {
+			opacity: 0;
+		}
+		*/
 	}
 	.wrapper {flex-grow: 1;}
 </style>
