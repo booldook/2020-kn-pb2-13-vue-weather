@@ -23,11 +23,12 @@ export default {
 	},
 	methods: {
 		onCityChg(e) {
-			this.$router.push('/daily/'+this.selectCity); // location.href='/index.html'
+			this.$store.dispatch('ACT_SEL_CITY', this.selectCity);
+			this.$router.push('/daily/'+this.selectCity);
 		}
 	},
 	computed: {
-		...mapGetters(['GET_CITY'])
+		...mapGetters(['GET_CITY', 'GET_SEL_CITY'])
 	},
 }
 </script>

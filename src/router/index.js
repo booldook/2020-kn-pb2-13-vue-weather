@@ -18,10 +18,20 @@ const routes = [
 		component: Daily,
 	},
 	{
+		path: '/daily',
+		name: 'daily',
+		component: Daily,
+	},
+	{
 		path: '/weekly/:id',
 		name: 'weekly',
 		component: Weekly,
-	}
+	},
+	{
+		path: '/weekly',
+		name: 'weekly',
+		component: Weekly,
+	},
 	/* {
 		path: '/sample/:id',
 		name: 'sample',

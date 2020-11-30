@@ -8,21 +8,22 @@ import { mapGetters } from 'vuex'
 
 export default {
 	name: 'daily',
-	data() {
-		return {
-			selectCity: ''
-		}
-	},
-	created() {
-		this.selectCity = this.$route.params.id;
-		this.$store.dispatch('ACT_DAILY', this.selectCity);
-	},
 	components: {
 		'weather-daily': WeatherDaily,
 	},
-	computed: {
-		...mapGetters(['GET_DAILY'])
+	created() {
+		if(this.$route.params && this.$route.params.id) {
+			this.$store.dispatch('ACT_DAILY', this.$route.params.id);
+		}
 	},
+	computed: {
+		...mapGetters(['GET_DAILY', 'GET_SEL_CITY'])
+	},
+	watch: {
+		GET_SEL_CITY: function(v) {
+			this.$store.dispatch('ACT_DAILY', v);
+		}
+	}
 }
 </script>
 
