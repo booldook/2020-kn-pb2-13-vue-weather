@@ -12,9 +12,11 @@ import WeatherIcon from './WeatherIcon'
 import WeatherTemp from './WeatherTemp'
 import WeatherDesc from './WeatherDesc'
 import WeatherWind from './WeatherWind'
+import { iconGen, timeGen } from '../../modules/util'
+
 export default {
 	name: 'WeatherWeeklyList',
-	props: ['data'],
+	props: ['datas'],
 	data() {
 		return { icon: '', temp: '', max: '', min: '', feel: '', main: '', desc: '', deg : '', speed: '', city: '', country: '', time: '' }
 	},
@@ -24,6 +26,11 @@ export default {
 		'weather-desc': WeatherDesc,
 		'weather-wind': WeatherWind,
 	},
+	watch: {
+		datas: (v) => {
+			console.log(v);
+		}
+	}
 }
 </script>
 

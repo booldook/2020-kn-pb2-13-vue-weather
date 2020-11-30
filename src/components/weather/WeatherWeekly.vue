@@ -21,7 +21,6 @@ export default {
 	},
 	watch: {
 		res: function (val) {
-			console.log(val)
 			this.city = val.city ? val.city.name : ''
 			this.country = val.city ? val.city.country : ''
 			this.list = val.list ? val.list : []

@@ -39,7 +39,6 @@ const axWeekly = async (val) => {
 			v.icon = iconGen(v.weather[0].icon);
 			v.time = timeGen(r.data.dt * 1000, 'H') + ' 기준'
 		}
-		console.log(r.data);
 		return r.data;
 	}
 	catch(e) {
