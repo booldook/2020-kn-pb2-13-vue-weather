@@ -1,36 +1,26 @@
 <template lang='pug'>
 	.d-flex.justify-content-start.align-items-center
-		weather-icon.weather-icon(:icon='icon')
+		weather-icon.weather-icon(:icon='val.icon')
 		.desc-wrap
-			weather-temp(:temp='temp' :min='min' :max='max' :feel='feel')
-			weather-desc.text-primary(:main='main' :desc='desc')
-			weather-wind(:deg='deg' :speed='speed')
+			weather-temp(:temp='val.main.temp' :min='val.main.temp_min' :max='val.main.temp_max' :feel='val.main.feels_like')
+			weather-desc.text-primary(:main='val.weather[0].main' :desc='val.weather[0].description')
+			//- div.time {{ `${iconGen(val.dt * 1000, 'H')}` }}
 </template>
 
 <script>
 import WeatherIcon from './WeatherIcon'
 import WeatherTemp from './WeatherTemp'
 import WeatherDesc from './WeatherDesc'
-import WeatherWind from './WeatherWind'
 import { iconGen, timeGen } from '../../modules/util'
 
 export default {
 	name: 'WeatherWeeklyList',
-	props: ['datas'],
-	data() {
-		return { icon: '', temp: '', max: '', min: '', feel: '', main: '', desc: '', deg : '', speed: '', city: '', country: '', time: '' }
-	},
+	props: ['val'],
 	components: {
 		'weather-icon': WeatherIcon,
 		'weather-temp': WeatherTemp,
 		'weather-desc': WeatherDesc,
-		'weather-wind': WeatherWind,
 	},
-	watch: {
-		datas: (v) => {
-			console.log(v);
-		}
-	}
 }
 </script>
 
