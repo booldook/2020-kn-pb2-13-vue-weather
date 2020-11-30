@@ -13,5 +13,7 @@ export default {
 
 <style lang='scss' scoped>
 @import "@/assets/css/variables.scss";
+.city-wrap {margin-top: 24px;}
+.city {border-bottom: 2px solid #444; padding-bottom: 4px;}
 .time {color: $greyColor; font-size: 0.875em;}
 </style>

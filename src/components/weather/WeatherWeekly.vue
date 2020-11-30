@@ -32,8 +32,8 @@ export default {
 <style lang="scss" scoped>
 	.list-wrap {
 		width: 100%;
-		height: calc(100vh - 153px);
+		height: calc(100vh - 184px);
 		overflow-y: auto;
-		.list {border-bottom: 1px solid #ccc; padding: 0.5em;}
+		.list {border-bottom: 1px solid #ccc; padding: 0.25em;}
 	}
 </style>
