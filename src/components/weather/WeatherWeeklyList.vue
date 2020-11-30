@@ -23,7 +23,7 @@ export default {
 		'weather-temp': WeatherTemp,
 		'weather-desc': WeatherDesc,
 		'weather-wind': WeatherWind,
-	}
+	},
 }
 </script>
 

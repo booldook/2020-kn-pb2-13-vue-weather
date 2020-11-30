@@ -1,17 +1,11 @@
 import axios from 'axios'
-import moment from 'moment'
-
+import { iconGen, timeGen } from '../modules/util'
 
 const APP_ID = '02efdd64bdc14b279bc91d9247db4722';
 const CITY_PATH = '/json/city.json'
 const DAILY_URL = 'https://api.openweathermap.org/data/2.5/weather'
 const WEEKLY_URL = 'https://api.openweathermap.org/data/2.5/forecast'
-const ICON_URL = 'https://openweathermap.org/img/wn/'
 const SEND_DATA = { units: 'metric', lang: 'kr', appid: APP_ID }
-
-const iconGen = (icon) => {
-	return ICON_URL + icon + '@2x.png';
-}
 
 const axDaily = async (val) => {
 	try {
@@ -27,8 +21,7 @@ const axDaily = async (val) => {
 		}
 		const r = await axios.get(DAILY_URL, { params: SEND_DATA });
 		r.data.icon = iconGen(r.data.weather[0].icon);
-		r.data.time = moment(r.data.dt * 1000).format('YYYY년 MM월 DD일 HH시 mm분 기준')
-		console.log(r.data);
+		r.data.time = timeGen(r.data.dt * 1000, 'M') + ' 기준'
 		return r.data;
 	}
 	catch(e) {
@@ -44,7 +37,7 @@ const axWeekly = async (val) => {
 		r.data.title = r.data.city.name + ', ' + r.data.city.country;
 		for(let v of r.data.list) {
 			v.icon = iconGen(v.weather[0].icon);
-			v.time = moment(v.dt * 1000).format('YYYY년 MM월 DD일 HH시 기준')
+			v.time = timeGen(r.data.dt * 1000, 'H') + ' 기준'
 		}
 		console.log(r.data);
 		return r.data;
